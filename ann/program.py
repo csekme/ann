@@ -1,11 +1,30 @@
 from activations.Sigmoid import Sigmoid
 from activations.HyperbolicTangent import HyperbolicTangent
+from nn import NeuralNetwork
 from neuron import Neuron
+from layer import Layer
 import matplotlib.pyplot as plt
 import numpy as np
 
 
-neuron = Neuron(0)
+nn = NeuralNetwork()
+input_layer = Layer()
+input_layer.add_neurons(4)
+hidden_layer = Layer()
+hidden_layer.add_neurons(8)
+output_layer = Layer()
+output_layer.add_neurons(2)
+nn.add_layer(input_layer)
+nn.add_layer(hidden_layer)
+nn.add_layer(output_layer)
+nn.init_weights()
+
+
+
+
+
+
+neuron = Neuron()
 neuron.set_activation(HyperbolicTangent())
 
 

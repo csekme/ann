@@ -25,7 +25,7 @@ class Layer:
         Sets the activation function for all neurons in the layer.
     """
     
-    def __init__(self, num_neurons: int, num_inputs_per_neuron: int) -> None:
+    def __init__(self) -> None:
         """
         Initializes the Layer class with a specified number of neurons and inputs per neuron.
         
@@ -41,7 +41,20 @@ class Layer:
         neurons : List[Neuron]
             The list of neurons in the layer, each initialized with the specified number of inputs.
         """
-        self.neurons: List[Neuron] = [Neuron(num_inputs_per_neuron) for _ in range(num_neurons)]
+        self.neurons: List[Neuron] = []
+
+    def add_neurons(self, number_of_neurons: int) -> None:
+        """
+        Adds a specified number of neurons to the layer.
+        
+        Parameters
+        ----------
+        number_of_neurons : int
+            The number of neurons to be added.
+        """
+        for _ in range(number_of_neurons):
+            self.add_neuron(Neuron())
+
 
     def add_neuron(self, neuron: Neuron) -> None:
         """

@@ -36,7 +36,7 @@ class Neuron:
         Returns the current bias of the neuron.
     """
     
-    def __init__(self, num_inputs: int) -> None:
+    def __init__(self) -> None:
         """
         Initializes the Neuron class with a specified number of inputs.
         
@@ -55,7 +55,7 @@ class Neuron:
             The bias term of the neuron, initialized to zero.
         """
         self.activation: ActivationModule = None
-        self.weights: List[float] = [0.0] * num_inputs
+        self.weights: List[float] = []
         self.bias: float = 0.0
 
     def set_activation(self, activation: ActivationModule) -> None:
